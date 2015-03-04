@@ -1,0 +1,289 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.icon-block {
+  padding: 0 15px;
+}
+html {
+  font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, SimSun, GillSans, Calibri, Trebuchet, sans-serif;
+}
+body {
+  background-color: #f4f6f8 !important;
+  width: 100%;
+}
+nav {
+  background-color: #ffffff !important;
+}
+.section {
+  padding-bottom: 0rem;
+}
+.card .card-content {
+  padding-top: 10px;
+}
+.container .template-content-page {
+  /*margin-top: 64px;*/
+}
+.container .row .section .card-panel {
+  padding-top: 0px;
+}
+.container .row .section .card-panel .sidebar-title {
+  margin-left: -20px;
+  margin-right: -20px;
+}
+.container .row .section .card-panel .sidebar-title .sidebar-title-text {
+  margin-left: 20px;
+}
+.container .row .section .valign-wrapper {
+  margin-bottom: 0px;
+}
+nav {
+  /*position: fixed;*/
+}
+footer.page-footer {
+  background-color: #fefefe !important;
+}
+footer.page-footer .footer-content .row{
+  margin-bottom: 10px;
+}
+footer.page-footer .footer-copyright {
+  line-height: 50px;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #ffffff !important;
+}
+.flow-text {
+  font-weight: 300; 
+}
+  @media only screen and (min-width: 210px) {
+    .flow-text {
+      /* chrome LG Optimus One 213*320 */
+      font-size: 1.10025rem;
+      } 
+    }
+  @media only screen and (min-width: 300px) {
+    .flow-text {
+      /* chrome Samsung Galaxy S,S 2,W 320*533*/
+      font-size: 1.20025rem;
+      } 
+    }
+  @media only screen and (min-width: 360px) {
+    .flow-text {
+      /* chrome Sony Xperiz Z,Z1 360*640*/
+      font-size: 1.4rem; 
+      } 
+    }
+  @media only screen and (min-width: 0px) {
+    .flow-text {
+      line-height: 0.8rem; 
+      } 
+    }
+  @media only screen and (min-width: 390px) {
+    .flow-text {
+      /* chrome Samsung Galaxy Note 400*640*/
+      font-size: 1.424rem; 
+      } 
+    }
+  @media only screen and (min-width: 30px) {
+    .flow-text {
+      line-height: 0.904rem; 
+      } 
+    }
+  @media only screen and (min-width: 420px) {
+    .flow-text {
+      /* chrome LG Optimus LTE, Optimus 4X 424*753 */
+      font-size: 1.448rem; 
+      } 
+    }
+  @media only screen and (min-width: 60px) {
+    .flow-text {
+      line-height: 1.008rem; 
+      } 
+    }
+  @media only screen and (min-width: 450px) {
+    .flow-text {
+      font-size: 1.272rem; 
+      } 
+    }
+  @media only screen and (min-width: 90px) {
+    .flow-text {
+      line-height: 1.112rem; 
+      } 
+    }
+  @media only screen and (min-width: 480px) {
+    .flow-text {
+      /* chrome Sony Xperiz Sola, U 480*854*/
+      font-size: 1.496rem; 
+      } 
+    }
+  @media only screen and (min-width: 120px) {
+    .flow-text {
+      line-height: 1.216rem; 
+      } 
+    }
+  @media only screen and (min-width: 510px) {
+    .flow-text {
+      font-size: 1.32rem; 
+      } 
+    }
+  @media only screen and (min-width: 150px) {
+    .flow-text {
+      line-height: 1.32rem; 
+      } 
+    }
+  @media only screen and (min-width: 540px) {
+    .flow-text {
+      /* chrome Motorola Droid 3,Droid 4, Droid Razr 540*960 */
+      font-size: 1.544rem; 
+      } 
+    }
+  @media only screen and (min-width: 180px) {
+    .flow-text {
+      line-height: 1.424rem; 
+      } 
+    }
+  @media only screen and (min-width: 570px) {
+    .flow-text {
+      font-size: 1.368rem; 
+      }
+    }
+  @media only screen and (min-width: 210px) {
+    .flow-text {
+      line-height: 1.528rem; 
+      } 
+    }
+  @media only screen and (min-width: 600px) {
+    .flow-text {
+      font-size: 1.392rem; 
+      } 
+    }
+  @media only screen and (min-width: 240px) {
+    .flow-text {
+      line-height: 1.632rem; 
+      } 
+    }
+  @media only screen and (min-width: 630px) {
+    .flow-text {
+      font-size: 1.416rem; 
+      } 
+    }
+  @media only screen and (min-width: 270px) {
+    .flow-text {
+      line-height: 1.736rem; 
+      } 
+    }
+  @media only screen and (min-width: 660px) {
+    .flow-text {
+      font-size: 1.44rem; 
+      } 
+    }
+  @media only screen and (min-width: 300px) {
+    .flow-text {
+      line-height: 1.84rem; 
+      } 
+    }
+  @media only screen and (min-width: 690px) {
+    .flow-text {
+      font-size: 1.464rem; 
+      } 
+    }
+  @media only screen and (min-width: 330px) {
+    .flow-text {
+      line-height: 1.944rem; 
+      } 
+    }
+  @media only screen and (min-width: 720px) {
+    .flow-text {
+      /* chrome Motorola Droid Razr HD 720*1280 */
+      font-size: 1.688rem; 
+      } 
+    }
+  @media only screen and (min-width: 360px) {
+    .flow-text {
+      line-height: 2.048rem; 
+      } 
+    }
+  @media only screen and (min-width: 750px) {
+    .flow-text {
+      font-size: 1.512rem; 
+      } 
+    }
+  @media only screen and (min-width: 390px) {
+    .flow-text {
+      line-height: 2.152rem; 
+      } 
+    }
+  @media only screen and (min-width: 780px) {
+    .flow-text {
+      font-size: 1.536rem; 
+      } 
+    }
+  @media only screen and (min-width: 420px) {
+    .flow-text {
+      line-height: 2.256rem; 
+      } 
+    }
+  @media only screen and (min-width: 810px) {
+    .flow-text {
+      font-size: 1.56rem; 
+      } 
+    }
+  @media only screen and (min-width: 450px) {
+    .flow-text {
+      line-height: 2.36rem; 
+      } 
+    }
+  @media only screen and (min-width: 840px) {
+    .flow-text {
+      font-size: 1.584rem; 
+      } 
+    }
+  @media only screen and (min-width: 480px) {
+    .flow-text {
+      line-height: 2.464rem; 
+      } 
+    }
+  @media only screen and (min-width: 870px) {
+    .flow-text {
+      font-size: 1.608rem; 
+      } 
+    }
+  @media only screen and (min-width: 510px) {
+    .flow-text {
+      line-height: 2.568rem; 
+      } 
+    }
+  @media only screen and (min-width: 900px) {
+    .flow-text {
+      font-size: 1.632rem; 
+      } 
+    }
+  @media only screen and (min-width: 540px) {
+    .flow-text {
+      line-height: 2.672rem; 
+      } 
+    }
+  @media only screen and (min-width: 930px) {
+    .flow-text {
+      font-size: 1.656rem; 
+      } 
+    }
+  @media only screen and (min-width: 570px) {
+    .flow-text {
+      line-height: 2.776rem; 
+      } 
+    }
+  @media only screen and (min-width: 960px) {
+    .flow-text {
+      /* chrome Google Nexus 7 2 960*600 */
+      font-size: 1.88rem; 
+      } 
+    }
+  @media only screen and (min-width: 600px) {
+    .flow-text {
+      line-height: 2.88rem; 
+      } 
+    }

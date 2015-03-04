@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}{{ SITENAME }} - 分类列表{% endblock %}
+{% block breadcrumb %}<a href="#"><i class="mdi-action-loyalty"></i>分类列表</a>{% endblock %}
+{% block content %}
+<div class="section">
+  <div class="z-depth-1">
+    {% if articles %}
+      {% for article in articles %}        
+        {% if loop.index == 1 %}
+          <ul class="collection">
+            {% for category, articles in categories %}
+              <li class="collection-item dismissable"><div>{{ category }}<a href="/{{ category.url }}" class="secondary-content"><i class="mdi-content-send"></i></a></div></li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>{% block title %}{%endblock%}</title>
+
+  <!-- CSS  -->
+  <link href="/theme/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/theme/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <!-- Top-navigation -->
+  <nav class="lighten-5" role="navigation">
+    <div class="container nav-wrapper">
+      <a id="logo-container" href="http://dubuqingfeng.github.io" class="brand-logo"><span class="blue-grey-text text-darken-4">独步清风</span></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a class="waves-effect waves-light" href="sass.html"><i class="mdi-action-search black-text"></i></a></li>
+        <li><a class="waves-effect waves-light" href="/feeds/all.rss.xml" target="_blank"><span class="blue-grey-text text-darken-4">RSS</span></a></li>
+        <li><a class="waves-effect waves-light" href="https://github.com/dubuqingfeng" target="_blank"><span class="blue-grey-text text-darken-4">Github</span></a></li>
+      </ul>
+      <ul class="right hide-on-large-only">
+        <li><a class="waves-effect waves-light" href="sass.html"><i class="mdi-action-search black-text"></i></a></li>
+      </ul>
+      <ul id="nav-mobile" class="side-nav">
+        <li><a class="waves-effect waves-light" href="#">Navbar Link</a></li>
+        <li><a class="waves-effect waves-light" href="/feeds/all.rss.xml"><span class="blue-grey-text text-darken-4">RSS</span></a></li>
+        <li><a class="waves-effect waves-light" href="https://github.com/dubuqingfeng"><span class="blue-grey-text text-darken-4">Github</span></a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu black-text"></i></a>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row template-content-page">
+      <div class="col s12 m8 l9">
+        <!-- Breadcrumb -->
+        <div class="section">
+          <ul class="collapsible" data-collapsible="accordion">
+            <li>
+              <div class="collapsible-header">
+                {% block breadcrumb %}{% endblock %}
+              </div>
+              <div class="collapsible-body"><p>This is index...</p></div>
+            </li>
+          </ul>
+        </div>
+        <!-- Article Lists -->
+        {% block content %}{% endblock %}
+      </div>
+      <div class="col s12 m4 l3">
+        <div class="section">
+          <div class="card-panel z-depth-1">
+            <div class="card black-text sidebar-title">
+              <span class="black-text sidebar-title-text"><a href="/categories.html" class="black-text flow-text" id="title">分类</a></span>
+            </div>
+            <div class="row valign-wrapper">
+              <div class="col s12">
+                <div class="card-action">
+                  <ul class="">
+                  {% for cat, articles in categories %}
+                    <li {% if cat == category %}class="active"{% endif %}><a href="/{{ cat.url }}">{{ cat }}</a></li>
+                  {% endfor %}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section">
+          <div class="card-panel z-depth-1">
+            <div class="card black-text sidebar-title">
+              <span class="black-text sidebar-title-text"><a href="/tags.html" class="black-text flow-text" id="title">标签</a></span>
+            </div>
+            <div class="row valign-wrapper">
+              <div class="col s12">
+                <div class="card-action">
+                  {% for tag in tag_cloud %}
+                    <a class="" href="/{{ tag.0.url }}">{{ tag.0 }}</a>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section">
+          <div class="card-panel z-depth-1">
+            <div class="card black-text sidebar-title">
+              <span class="black-text sidebar-title-text"><a href="" class="black-text flow-text" id="title">链接</a></span>
+            </div>
+            <div class="row valign-wrapper">
+              <div class="col s12">
+                <div class="card-action">
+                  <ul class="">
+                  {% for name, link in LINKS %}
+                    <li><a href="{{ link }}">{{ name }}</a></li>
+                  {% endfor %}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer -->
+  <footer class="page-footer z-depth-2">
+    <div class="container footer-content">
+      <div class="row">
+        <div class="col l12 s12">
+          <a href="#top"><button class="btn waves-effect waves-light blue darken-3 right" alt="Back To Top">Top
+          </button></a>
+          <button class="btn waves-effect waves-light blue darken-3" type="submit" name="action" alt="PayPal - The safer, easier way to pay online!">Support
+          </button>
+          <button class="btn waves-effect waves-light blue darken-3" type="submit" name="action" alt="PayPal - The safer, easier way to pay online!">Projects
+          </button>
+          <button class="btn waves-effect waves-light blue darken-3" type="submit" name="action" alt="PayPal - The safer, easier way to pay online!">About
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright z-depth-1">
+      <div class="container">
+        <div class="row">
+          <div class="col l12 s12 grey-text text-darken-4 hide-on-small-only">
+            {% if not FOUNDATION_FOOTER_TEXT %}
+                {% set FOUNDATION_FOOTER_TEXT = 'Powered by <a class="amber-text text-darken-4" href="http://getpelican.com" target="_blank">Pelican</a>. <span class="right">Theme by <a class="amber-text text-darken-4" href="http://dbqf.xyz">Dubuqingfeng</a>.' %}
+            {% endif %}
+            {{ FOUNDATION_FOOTER_TEXT }}
+          </div>
+          <div class="col l12 s12 grey-text text-darken-4 hide-on-med-and-up">
+            {% if not MOBIlE_FOOTER_TEXT %}
+                {% set MOBIlE_FOOTER_TEXT = '<span class="right">Theme by <a class="amber-text text-darken-4" href="http://dbqf.xyz">Dubuqingfeng</a>.' %}
+            {% endif %}
+            {{ MOBIlE_FOOTER_TEXT }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--  Scripts-->
+  <script src="/theme/js/jquery-1.11.2.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="/theme/js/materialize.js"></script>
+  <script src="/theme/js/init.js"></script>
+  </body>
+</html>
+
+<!-- Nav Bar -->
+<!--
+<nav>
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a href="{{ SITEURL }}" class="navbar-brand">{{ SITENAME }}</a>
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar-main">
+      <ul class="nav navbar-nav">
+        {% for cat, articles in categories %}
+          <li {% if cat == category %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+        {% endfor %}
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download"> xialaliebiao<span class="caret"></span></a>
+          <ul class="dropdown-menu" aria-labelledby="download">
+            <li><a href="./bootstrap.min.css">bootstrap.min.css</a></li>
+            <li><a href="./bootstrap.css">bootstrap.css</a></li>
+            <li class="divider"></li>
+            <li><a href="./variables.less">variables.less</a></li>
+            <li><a href="./bootswatch.less">bootswatch.less</a></li>
+            <li class="divider"></li>
+            <li><a href="./_variables.scss">_variables.scss</a></li>
+            <li><a href="./_bootswatch.scss">_bootswatch.scss</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="" target="_blank">RSS</a></li>
+        <li><a href="" target="_blank">Github</a></li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+</nav>
+-->
+<!-- End Nav -->
+
+<!-- Main Page Content and Sidebar -->
+<!-- <section class="main-section">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-8 col-md-7 col-sm-6" role="content">
+                {% if pagetitle is defined %}
+                <div class="row">
+                    <div class="small-12 columns">
+                        <h2>{{ pagetitle }}</h2>
+                    </div>
+                </div>
+                {% endif %}
+                
+            </div>
+            <div class="col-lg-4 col-md-5 col-sm-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Tags</div>
+                    <div class="panel-body">
+                        <ul class="tag-cloud">
+                            {% for tag in tag_cloud %}
+                                <li class="tag-{{ tag.1 }}"><a href="{{ SITEURL }}/{{ tag.0.url }}">{{ tag.0 }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Places</div>
+                    <div class="panel-body">
+                        <ul class="side-nav">
+                            {% for name, link in LINKS %}
+                            <li><a href="{{ link }}">{{ name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                {% if MONTH_ARCHIVE_SAVE_AS %}
+                <div class="panel panel-default">
+                    <div class="panel-heading">Monthly Archives</div>
+                    <div class="panel-body">
+                        <ul class="side-nav">
+                            {% for year, date_year in dates|groupby( 'date.year' )|sort(reverse=True) %}
+                                {% for month, articles in date_year|groupby( 'date.month' )|sort(reverse=True) %}
+                                    <li><a href="/{{ MONTH_ARCHIVE_SAVE_AS.format(date=articles[0].date) }}">{{ articles[0].date.strftime('%B') }} {{ year }} ({{ articles|count }})</a></li>
+                                {% endfor %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                {% endif %}
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Links</div>
+                    <div class="panel-body">
+                        <ul class="side-nav">
+                            {% for name, link in SOCIAL|sort %}
+                            <li><a href="{{ link }}">{{ name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="row">
+            <div class="col-lg-12">
+                <ul class="list-unstyled">
+                  <li class="pull-right"><a href="#top">Back to top</a></li>
+                  <li><a href="http://news.bootswatch.com" onclick="pageTracker._link(this.href); return false;">Blog</a></li>
+                  <li><a href="http://feeds.feedburner.com/bootswatch">RSS</a></li>
+                  <li><a href="https://twitter.com/bootswatch">Twitter</a></li>
+                  <li><a href="https://github.com/thomaspark/bootswatch/">GitHub</a></li>
+                  <li><a href="../help/#api">API</a></li>
+                  <li><a href="../help/#support">Support</a></li>
+                </ul>
+                {% if not FOUNDATION_FOOTER_TEXT %}
+                {% set FOUNDATION_FOOTER_TEXT = 'Powered by <a href="http://getpelican.com">Pelican</a> and <a href="http://foundation.zurb.com/">Bootwatch</a>. Theme by <a href="http://hamaluik.com">Dubuqingfeng</a>.' %}
+                {% endif %}
+                <p class="text-center">{{ FOUNDATION_FOOTER_TEXT }}</p>
+            </div>
+        </footer>
+    </div -->

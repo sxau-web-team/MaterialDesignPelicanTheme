@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}独步清风's blog-{{ article.title }}{%endblock%}
+{% block breadcrumb %}{% if article.category %}<a href="/{{ article.category.url }}"><i class="mdi-action-subject"></i>{{ article.category}}</a> {% endif %}{% endblock %}
+{% block content %}
+<div class="section">
+  <div class="card z-depth-1">
+    <div class="card-content black-text">
+      <span class="card-title black-text"><a href="/{{ article.url }}" class="black-text flow-text" id="title">{{ article.title }}</a></span>
+      <p>{{ article.content }}
+	  	</p>
+    </div>
+    <div class="card-action">
+      <a class="orange-text text-accent-2" href="/{{ article.category.url }}" onclick="">{{ article.locale_date }}</a>
+      {% if article.tags|count > 0 %}{% for tag in article.tags %}<a href="/{{ tag.url }}">{{ tag }}</a>{% endfor %}{% endif %}
+    </div>
+  </div>
+</div>
+<div class="section">
+  <div class="card z-depth-1">
+    {% if DISQUS_SITENAME %}
+    <div class="card-content">
+			<div class="row">
+				<div class="col s12">
+					<h3>Comments</h3>
+					<div id="disqus_thread"></div>
+					<script type="text/javascript">
+						var disqus_shortname = '{{ DISQUS_SITENAME }}';
+						(function() {
+							var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+							dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+							(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+						})();
+					</script>
+					<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+					<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+				</div>
+			</div>
+		</div>
+		{% endif %}
+  </div>
+</div>
+{% endblock %}

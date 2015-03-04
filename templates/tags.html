@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}{{ SITENAME }} - 标签列表{% endblock %}
+{% block breadcrumb %}<a href="#"><i class="mdi-action-loyalty"></i>标签列表</a>{% endblock %}
+{% block content %}
+<div class="section">
+	<div class="z-depth-1">
+		<ul class="collection">
+			{% for tag, articles in tags %}
+      <li class="collection-item dismissable"><div>{{ tag }}<a href="/{{ tag.url }}" class="secondary-content"><i class="mdi-content-send"></i></a></div></li>
+     	{% endfor %}
+    </ul>
+	</div>
+</div>
+{% endblock %}

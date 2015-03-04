@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Archives of {{ SITENAME }}{% endblock %}
+{% block breadcrumb %}<a href="#"><i class="mdi-action-list"></i>所有文章</a>{% endblock %}
+{% block content %}  
+<div class="section">
+	<div class="z-depth-1">
+		<ul class="collection">
+			{% for article in dates %}
+      <li class="collection-item dismissable"><div>{{ article.title }} -- {{ article.locale_date }}<a href="/{{ article.url }}" class="secondary-content"><i class="mdi-content-send"></i></a></div></li>
+     	{% endfor %}
+    </ul>
+	</div>
+</div>
+{% endblock %}

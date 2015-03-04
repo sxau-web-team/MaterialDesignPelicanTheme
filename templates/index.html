@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}独步清风's blog{%endblock%}
+{% block breadcrumb %}<a href="http://dbqf.xyz"><i class="mdi-action-home"></i>首页</a>{% endblock %}
+{% block content %}
+{# show summaries of the latest articles #}
+{% if articles %}
+{% for article in (articles_page.object_list if articles_page else articles) %}
+<div class="section">
+  <div class="card z-depth-1">
+    <div class="card-content black-text">
+      <span class="card-title black-text"><a href="/{{ article.url }}" class="black-text flow-text" id="title">{{ article.title }}</a></span>
+      <p>{{ article.content if DUBUQINGFENG_FRONT_PAGE_FULL_ARTICLES else article.summary }}
+	  </p>
+    </div>
+    <div class="card-action">
+      <a class="orange-text text-accent-2" href="/{{ article.category.url }}" onclick="">{{ article.locale_date }}</a>
+      {% if article.tags|count > 0 %}{% for tag in article.tags %}<a href="/{{ tag.url }}">{{ tag }}</a>{% endfor %}{% endif %}
+    </div>
+  </div>
+</div>
+{% endfor %}
+{%endif%}
+
+{# deal with pagination #}
+{% if articles_page and articles_paginator.num_pages > 1 %}
+<div class="section">
+  <ul class="pagination">
+    {% if articles_page.has_previous() %}
+	  {% set num = articles_page.previous_page_number() %}
+	  <li class="waves-effect"><a href="/{{ page_name }}{{ num if num > 1 else '' }}.html"><i class="mdi-navigation-chevron-left"></i></a></li>
+	{% else %}
+	  <li class="disabled"><a href="#"><i class="mdi-navigation-chevron-left"></i></a></li>
+	{% endif %}
+	{% for num in range( 1, 1 + articles_paginator.num_pages ) %}
+	  <li class="{{ 'active' if num == articles_page.number else '' }} waves-effect"><a href="{{ SITEURL }}/{{ page_name }}{{ num if num > 1 else '' }}.html">{{ num }}</a></li>
+	{% endfor %}
+	{% if articles_page.has_next() %}
+	  <li class="waves-effect"><a href="/{{ page_name }}{{ articles_page.next_page_number() }}.html"><i class="mdi-navigation-chevron-right"></i></a></li>
+	{% else %}
+	  <li class="disabled"><a href="#!"><i class="mdi-navigation-chevron-right"></i></a></li>
+	{% endif %}
+    <li class="active"><a href="#!">1</a></li>
+    <li class="waves-effect"><a href="#!">2</a></li>
+    <li class="waves-effect"><a href="#!">3</a></li>
+    <li class="waves-effect"><a href="#!">4</a></li>
+    <li class="waves-effect"><a href="#!">5</a></li>
+    <li class="waves-effect"><a href="#!"><i class="mdi-navigation-chevron-right"></i></a></li>
+  </ul>
+</div>
+{% endif %}
+{% endblock %}
+
