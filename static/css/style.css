@@ -24,6 +24,10 @@ nav {
 }
 .card .card-content {
   padding-top: 10px;
+  padding-bottom: 10px;
+}
+.section .card .card-content p a {
+	margin-right: 0px;
 }
 .container .template-content-page {
   /*margin-top: 64px;*/
@@ -43,6 +47,10 @@ nav {
 }
 nav {
   /*position: fixed;*/
+}
+.collapsible-header {
+  height: 3rem;
+  line-height: 3rem;
 }
 footer.page-footer {
   background-color: #fefefe !important;
@@ -77,6 +85,14 @@ footer.page-footer .footer-copyright {
       } 
     }
   @media only screen and (min-width: 0px) {
+    .collapsible-header {
+        height: 6rem;
+        line-height: 3rem;
+      }
+    .normal .collapsible-header {
+        height: 3rem;
+        line-height: 3rem;
+      }
     .flow-text {
       line-height: 0.8rem; 
       } 
@@ -114,6 +130,14 @@ footer.page-footer .footer-copyright {
       } 
     }
   @media only screen and (min-width: 480px) {
+    .collapsible-header {
+        height: 3rem;
+        line-height: 3rem;
+      }
+    .normal .collapsible-header {
+        height: 3rem;
+        line-height: 3rem;
+      }
     .flow-text {
       /* chrome Sony Xperiz Sola, U 480*854*/
       font-size: 1.496rem; 
@@ -156,6 +180,14 @@ footer.page-footer .footer-copyright {
       } 
     }
   @media only screen and (min-width: 600px) {
+    .collapsible-header {
+        height: 6rem;
+        line-height: 3rem;
+      }
+    .normal .collapsible-header {
+        height: 3rem;
+        line-height: 3rem;
+      }
     .flow-text {
       font-size: 1.392rem; 
       } 
@@ -207,6 +239,14 @@ footer.page-footer .footer-copyright {
       } 
     }
   @media only screen and (min-width: 750px) {
+    .collapsible-header {
+        height: 3rem;
+        line-height: 3rem;
+      }
+    .normal .collapsible-header {
+        height: 3rem;
+        line-height: 3rem;
+      }
     .flow-text {
       font-size: 1.512rem; 
       } 

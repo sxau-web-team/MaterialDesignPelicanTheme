@@ -1,13 +1,13 @@
 {% extends "base.html" %}
-{% block title %}独步清风's blog-{{ article.title }}{%endblock%}
-{% block breadcrumb %}{% if article.category %}<a href="/{{ article.category.url }}"><i class="mdi-action-subject"></i>{{ article.category}}</a> {% endif %}{% endblock %}
+{% block title %}{{ article.title }} - {{ SITENAME }}{%endblock%}
+{% block breadcrumb %}<div class="collapsible-header">{% if article.category %}<a href="/{{ article.category.url }}"><i class="mdi-action-subject"></i>{{ article.category }}</a>{% endif %}<a href="#">--{{ article.title }}</a>{% endblock %}
+{% block breadcrumbcontent %}{{ article.summary }}{% endblock %}
 {% block content %}
 <div class="section">
   <div class="card z-depth-1">
     <div class="card-content black-text">
       <span class="card-title black-text"><a href="/{{ article.url }}" class="black-text flow-text" id="title">{{ article.title }}</a></span>
-      <p>{{ article.content }}
-	  	</p>
+      {{ article.content }}	
     </div>
     <div class="card-action">
       <a class="orange-text text-accent-2" href="/{{ article.category.url }}" onclick="">{{ article.locale_date }}</a>

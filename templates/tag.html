@@ -1,3 +1,4 @@
 {% extends "index.html" %}
 {% block title %}{{ SITENAME }} - {{ tag }}{% endblock %}
-{% block breadcrumb %}<i class="mdi-action-loyalty"></i>{% if tag %}<a href="#">{{ tag }}</a> {% endif %}{% endblock %}
+{% block breadcrumb %}<div class="normal"><div class="collapsible-header"><a href="#"><i class="mdi-action-loyalty"></i></a>{% if tag %}<a href="#">{{ tag }}</a> {% endif %}</div>{% endblock %}
+{% block breadcrumbcontent %}<p>This is tag...</p>{% endblock %}
