@@ -11,15 +11,33 @@
   <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css" media="screen,projection">
   <link href="/theme/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <script src="/theme/js/jquery-1.11.2.min.js"></script>
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?76712397de583de526f98e457deb2a7d";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
   {% block style %}{%endblock%}
 </head>
 <body>
   <!-- Top-navigation -->
   <nav class="lighten-5" role="navigation">
     <div class="container nav-wrapper">
-      <a id="logo-container" href="http://dubuqingfeng.github.io" class="brand-logo"><span class="blue-grey-text text-darken-4">独步清风</span></a>
+      <a id="logo-container" href="http://dbqf.xyz" class="brand-logo"><span class="blue-grey-text text-darken-4">独步清风</span></a>
       <ul class="right hide-on-med-and-down">
-        <li><a class="waves-effect waves-light" href="#"><i class="mdi-action-search black-text"></i></a></li>
+        <li>
+          <div class="black-text">
+            <form onsubmit="return dispatch()">
+              <div class="input-field">
+                <input type="search" id="search-field" class="field" required maxlength="" name="q">
+                <label for="search-field" class="right"><i class="mdi-action-search black-text"></i></label>
+              </div>
+            </form>
+          </div>
+        </li>
         <li><a class="waves-effect waves-light" href="/feeds/all.rss.xml" target="_blank"><span class="blue-grey-text text-darken-4">RSS</span></a></li>
         <li><a class="waves-effect waves-light" href="https://github.com/dubuqingfeng" target="_blank"><span class="blue-grey-text text-darken-4">Github</span></a></li>
       </ul>
@@ -78,7 +96,7 @@
             <div class="row valign-wrapper">
               <div class="col s12">
                 <div class="card-action">
-                  {% for tag in tag_cloud %}
+                  {% for tag in tags %}
                     <a class="" href="/{{ tag.0.url }}">{{ tag.0 }}</a>
                   {% endfor %}
                 </div>
@@ -94,7 +112,7 @@
             <div class="row valign-wrapper">
               <div class="col s12">
                 <div class="card-action">
-                  {% for tag in tag_cloud %}
+                  {% for tag in tags %}
                     <a class="" href="/{{ tag.0.url }}">{{ tag.0 }}</a>
                   {% endfor %}
                 </div>
