@@ -80,6 +80,9 @@ footer.page-footer .footer-copyright {
   color: rgba(255, 255, 255, 0.8);
   background-color: #ffffff !important;
 }
+.card a {
+  text-transform: none;
+}
 .flow-text {
   font-weight: 300; 
 }
