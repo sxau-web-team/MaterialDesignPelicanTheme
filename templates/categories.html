@@ -10,7 +10,7 @@
         {% if loop.index == 1 %}
           <ul class="collection">
             {% for category, articles in categories %}
-              <li class="collection-item dismissable"><div>{{ category }}<a href="/{{ category.url }}" class="secondary-content"><i class="mdi-content-send"></i></a></div></li>
+              <li class="collection-item dismissable"><div><a href="/{{ category.url }}">{{ category }}</a><a href="/{{ category.url }}" class="secondary-content"><i class="mdi-content-send"></i></a></div></li>
             {% endfor %}
           </ul>
         {% endif %}

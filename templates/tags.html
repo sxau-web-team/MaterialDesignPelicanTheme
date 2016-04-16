@@ -7,7 +7,7 @@
 	<div class="z-depth-1">
 		<ul class="collection">
 			{% for tag, articles in tags %}
-      <li class="collection-item dismissable"><div>{{ tag }}<a href="/{{ tag.url }}" class="secondary-content"><i class="mdi-content-send"></i></a></div></li>
+      <li class="collection-item dismissable"><div><a href="/{{ tag.url }}">{{ tag }}</a><a href="/{{ tag.url }}" class="secondary-content"><i class="mdi-content-send"></i></a></div></li>
      	{% endfor %}
     </ul>
 	</div>

@@ -86,6 +86,9 @@ footer.page-footer .footer-copyright {
 .flow-text {
   font-weight: 300; 
 }
+.section .collection .collection-item a {
+  color: rgba(0, 0, 0, 0.87);
+}
   @media only screen and (min-width: 210px) {
     .flow-text {
       /* chrome LG Optimus One 213*320 */

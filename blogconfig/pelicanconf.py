@@ -21,9 +21,7 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('1433', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
+LINKS = (('1433', 'http://1433.sinaapp.com/'),
          ('', '#'),)
 
 # Social widget
@@ -31,6 +29,9 @@ SOCIAL = (('Github', 'http://github.com/dubuqingfeng'),
           ('Another social link', '#'),)
 
 DEFAULT_PAGINATION = 10
+
+STATIC_PATHS = ['extra/CNAME','pdfs']
+EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},'pdfs/resume.pdf': {'path':'resume.pdf'},}
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
