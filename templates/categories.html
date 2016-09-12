@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}{{ SITENAME }} - 分类列表{% endblock %}
-{% block breadcrumb %}<div class="normal"><div class="collapsible-header"><a href="#"><i class="mdi-action-loyalty"></i>分类列表</a></div>{% endblock %}
+{% block breadcrumb %}<div class="normal"><div class="collapsible-header"><a href="#"><i class="material-icons">loyalty</i>分类列表</a></div>{% endblock %}
 {% block breadcrumbcontent %}<p>This is categories...</p>{% endblock %}
 {% block content %}
 <div class="section">
@@ -10,7 +10,7 @@
         {% if loop.index == 1 %}
           <ul class="collection">
             {% for category, articles in categories %}
-              <li class="collection-item dismissable"><div><a href="/{{ category.url }}">{{ category }}</a><a href="/{{ category.url }}" class="secondary-content"><i class="mdi-content-send"></i></a></div></li>
+              <li class="collection-item dismissable"><div><a href="/{{ category.url }}">{{ category }}</a><a href="/{{ category.url }}" class="secondary-content"><i class="material-icons">send</i></a></div></li>
             {% endfor %}
           </ul>
         {% endif %}

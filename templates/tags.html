@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% block title %}{{ SITENAME }} - 标签列表{% endblock %}
-{% block breadcrumb %}<div class="normal"><div class="collapsible-header"><a href="#"><i class="mdi-action-loyalty"></i>标签列表</a></div>{% endblock %}
+{% block breadcrumb %}<div class="normal"><div class="collapsible-header"><a href="#"><i class="material-icons">loyalty</i>标签列表</a></div>{% endblock %}
 {% block breadcrumbcontent %}<p>This is tags...</p>{% endblock %}
 {% block content %}
 <div class="section">
 	<div class="z-depth-1">
 		<ul class="collection">
 			{% for tag, articles in tags %}
-      <li class="collection-item dismissable"><div><a href="/{{ tag.url }}">{{ tag }}</a><a href="/{{ tag.url }}" class="secondary-content"><i class="mdi-content-send"></i></a></div></li>
+      <li class="collection-item dismissable"><div><a href="/{{ tag.url }}">{{ tag }}</a><a href="/{{ tag.url }}" class="secondary-content"><i class="material-icons">send</i></a></div></li>
      	{% endfor %}
     </ul>
 	</div>

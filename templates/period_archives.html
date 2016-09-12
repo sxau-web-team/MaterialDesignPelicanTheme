@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% block title %}Archives of {{ SITENAME }}{% endblock %}
-{% block breadcrumb %}<div class="normal"><div class="collapsible-header"><a href="#"><i class="mdi-action-list"></i>文章</a></div>{% endblock %}
+{% block breadcrumb %}<div class="normal"><div class="collapsible-header"><a href="#"><i class="material-icons">list</i>文章</a></div>{% endblock %}
 {% block breadcrumbcontent %}<p>This is all...</p>{% endblock %}
 {% block content %}  
 <div class="section">
 	<div class="z-depth-1">
 		<ul class="collection">
 			{% for article in dates %}
-      <li class="collection-item dismissable"><div><a href="/{{ article.url }}">{{ article.title }}</a> -- {{ article.locale_date }}<a href="/{{ article.url }}" class="secondary-content"><i class="mdi-content-send"></i></a></div></li>
+      <li class="collection-item dismissable"><div><a href="/{{ article.url }}">{{ article.title }}</a> -- {{ article.locale_date }}<a href="/{{ article.url }}" class="secondary-content"><i class="material-icons">send</i></a></div></li>
      	{% endfor %}
     </ul>
 	</div>

@@ -20,6 +20,14 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+# https://github.com/getpelican/pelican/issues/1667#event-258480817
+from functools import partial
+
+JINJA_FILTERS = {
+    'sort_by_article_count': partial(sorted,
+                                     key=lambda tags: len(tags[1]),
+                                     reverse=True)} # reversed for descending order
+
 # Blogroll
 LINKS = (('1433', 'http://1433.sinaapp.com/'),
          ('', '#'),)
