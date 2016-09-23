@@ -37,6 +37,8 @@
             </form>
           </div>
         </li>
+        <li><a class="waves-effect waves-light" href="http://dubuqingfeng-sitenav.daoapp.io/" target="_blank"><span class="blue-grey-text text-darken-4">导航</span></a></li>
+        <li><a class="waves-effect waves-light" href="/pages/201603-computer-books-security.html" target="_blank"><span class="blue-grey-text text-darken-4">书单</span></a></li>
         <li><a class="waves-effect waves-light" href="/feeds/all.rss.xml" target="_blank"><span class="blue-grey-text text-darken-4">RSS</span></a></li>
         <li><a class="waves-effect waves-light" href="https://github.com/dubuqingfeng" target="_blank"><span class="blue-grey-text text-darken-4">GitHub</span></a></li>
       </ul>
@@ -156,14 +158,14 @@
         <div class="section">
           <div class="card-panel z-depth-1">
             <div class="card black-text sidebar-title">
-              <span class="black-text sidebar-title-text"><a href="" class="black-text flow-text" id="title">链接</a></span>
+              <span class="black-text sidebar-title-text"><a href="" class="black-text flow-text" id="title">友情链接</a></span>
             </div>
             <div class="row valign-wrapper">
               <div class="col s12">
                 <div class="card-action">
                   <ul class="">
                   {% for name, link in LINKS %}
-                    <li><a href="{{ link }}">{{ name }}</a></li>
+                    <li><a href="{{ link }}" target="_blank">{{ name }}</a></li>
                   {% endfor %}
                   </ul>
                 </div>
