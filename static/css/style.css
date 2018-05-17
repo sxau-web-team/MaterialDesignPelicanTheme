@@ -79,6 +79,9 @@ nav .input-field label {
 .section {
   padding-bottom: 0rem;
 }
+.section .card-panel .row img {
+  margin: auto;
+}
 .card .card-content {
   padding-top: 10px;
   padding-bottom: 10px;
